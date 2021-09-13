@@ -69,7 +69,7 @@ def get_reviews(link: str):
     
     if int(total) < 500:
         
-        for i in range(len(total_pages)):
+        for i in range(total_pages):
             
             page_source.append(requests.get(finalurl+counter))
             counter += 1
