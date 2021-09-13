@@ -113,6 +113,8 @@ def get_reviews(link: str):
     
     filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
     bodies = list(filter_object2)
+    
+    st.text(len(bodies), len(titles))
             
     reviewdict = {'Title' : titles, 'Body' : bodies}
                    
