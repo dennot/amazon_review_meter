@@ -30,6 +30,7 @@ import pandas as pd
 import numpy as np
 
 import streamlit as st
+from streamlit import caching
 
 import math
 
@@ -176,4 +177,6 @@ if len(user_input) != 0:
     st.image('tacometro_'+str(img)+'.png')
     
     word_cloud(df.Body, stopwords_add)
+    
+    caching.clear_cache()
 
