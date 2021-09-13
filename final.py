@@ -45,11 +45,15 @@ def get_reviews(link: str):
     driver = webdriver.Firefox(firefox_binary=binary, executable_path=r'/app/vendor/geckodriver/geckodriver', firefox_options=opts)
     driver.get(link)
     
+    st.text('didnt break1')
+    
     time.sleep(1)
     driver.find_element_by_xpath("//a[@data-hook='see-all-reviews-link-foot']").click()
     page_source = []
     
     source_1 = driver.page_source
+    
+    st.text('didnt break2')
     
     world_selection = BeautifulSoup(source_1, 'lxml')
     total_selection = world_selection.find('div', class_='a-row a-spacing-base a-size-base')
@@ -65,6 +69,8 @@ def get_reviews(link: str):
             time.sleep(1)
             page_source.append(driver.page_source)
             driver.find_element_by_class_name('a-last').click()
+            
+            st.text('maybe break here')
             
         except WebDriverException:
             driver.close()
