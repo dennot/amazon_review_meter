@@ -165,23 +165,24 @@ def word_cloud(dftext, stopwords_add):
 
 st.title('Amazon Review Meter')
 
-st.sidebar.selectbox('Show',('Review Analysis', 'Reviews'))
-
 user_input = st.text_input("Insert AMAZON.US product link:")
 
 if len(user_input) != 0:
-    df = get_reviews(user_input)
-    stopwords_add = stopwords(user_input)
-    result, size, pos, nega = sentiment_scores(df['Body'])
+    show_side = st.sidebar.selectbox('Show',('Review Analysis', 'Reviews'))
 
-    st.write('Test', result)
-   
-    score = (int(pos)/int(size))*100
-    img = math.floor(score/20)
+    if show_side == 'Review Analysis':
     
-    st.image('tacometro_'+str(img)+'.png')
+        df = get_reviews(user_input)
+        stopwords_add = stopwords(user_input)
+        result, size, pos, nega = sentiment_scores(df['Body'])
+        score = (int(pos)/int(size))*100
+        img = math.floor(score/20)
+        st.image('tacometro_'+str(img)+'.png')
+        word_cloud(df.Body, stopwords_add)
     
-    word_cloud(df.Body, stopwords_add)
+    if show_side == 'Reviews':
     
+        st.write(df)
+        
     caching.clear_cache()
 
