@@ -115,6 +115,7 @@ def get_reviews(link: str):
     bodies = list(filter_object2)
     
     st.write(len(bodies), len(titles))
+    st.write(titles, bodies)
             
     reviewdict = {'Title' : titles, 'Body' : bodies}
                    
