@@ -77,28 +77,36 @@ def get_reviews(link: str):
     
     for i in range(len(page_source)):
         
-        world_selection = BeautifulSoup(page_source[i], 'lxml')
-    
-        review_title = world_selection.findAll('a', class_='a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold')
-        title_list = re.findall(r'>(.*?)<', str(review_title))
-        reviews_titles = [i for i in title_list if i !=', ']
-        titles.extend(reviews_titles)
+        while titles & bodies < total:
         
-        review_title = world_selection.findAll('span', class_='a-size-base review-title a-color-base review-title-content a-text-bold')
-        title_list = re.findall(r'>(.*?)<', str(review_title))
-        reviews_titles = [i for i in title_list if i !=', ']
-        titles.extend(reviews_titles)
+            world_selection = BeautifulSoup(page_source[i], 'lxml')
     
-        review_body = world_selection.findAll('span', class_='a-size-base review-text review-text-content')
-        body_list = re.findall(r'>\n  (.*)\n<', str(review_body))
-        body_reviews = [i for i in body_list if i !=', ']
-        bodies.extend(body_reviews)
+            review_title = world_selection.findAll('a', class_='a-size-base a-link-normal review-title a-color-base review-title-content a-text-bold')
+            title_list = re.findall(r'>(.*?)<', str(review_title))
+            reviews_titles = [i for i in title_list if i !=', ']
+            titles.extend(reviews_titles)
         
-    filter_object = filter(lambda x: x != "", titles)
-    titles = list(filter_object)
+            review_title = world_selection.findAll('span', class_='a-size-base review-title a-color-base review-title-content a-text-bold')
+            title_list = re.findall(r'>(.*?)<', str(review_title))
+            reviews_titles = [i for i in title_list if i !=', ']
+            titles.extend(reviews_titles)
     
-    filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
-    bodies = list(filter_object2)
+            review_body = world_selection.findAll('span', class_='a-size-base review-text review-text-content')
+            body_list = re.findall(r'>\n  (.*)\n<', str(review_body))
+            body_reviews = [i for i in body_list if i !=', ']
+            bodies.extend(body_reviews)
+            
+            filter_object = filter(lambda x: x != "", titles)
+            titles = list(filter_object)
+    
+            filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
+            bodies = list(filter_object2)
+            
+            if titles & bodies == total:
+                
+                break
+            
+        break
             
     reviewdict = {'Title' : titles, 'Body' : bodies}
                    
