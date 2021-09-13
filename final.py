@@ -43,12 +43,13 @@ def get_reviews(link: str):
     binary = FirefoxBinary('/app/vendor/firefox/firefox')
     
     driver = webdriver.Firefox(firefox_binary=binary, executable_path=r'/app/vendor/geckodriver/geckodriver', firefox_options=opts)
-    driver.get(link)
+    
+    new_link = link.replace('dp', 'product-reviews')
+    final_link = new_link.replace('ref=lp_16225009011_1_2?dchild=1&th=1', 'ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews')
+    driver.get(final_link)
     
     st.text('didnt break1')
-    
-    time.sleep(1)
-    driver.find_element_by_xpath("//a[@data-hook='see-all-reviews-link-foot']").click()
+
     page_source = []
     
     source_1 = driver.page_source
