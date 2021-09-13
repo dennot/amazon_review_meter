@@ -78,7 +78,7 @@ def get_reviews(link: str):
             driver.close()
             break
         
-        except WebDriverException:
+        except SessionNotCreatedException:
             driver.close()
             break
         
