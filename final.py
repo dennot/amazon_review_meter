@@ -169,10 +169,10 @@ user_input = st.text_input("Insert AMAZON.US product link:")
 
 if len(user_input) != 0:
     show_side = st.sidebar.selectbox('Show',('Review Analysis', 'Reviews'))
+    df = get_reviews(user_input)
 
     if show_side == 'Review Analysis':
     
-        df = get_reviews(user_input)
         stopwords_add = stopwords(user_input)
         result, size, pos, nega = sentiment_scores(df['Body'])
         score = (int(pos)/int(size))*100
