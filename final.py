@@ -71,14 +71,14 @@ def get_reviews(link: str):
         
         for i in range(total_pages):
             
-            page_source.append(requests.get(finalurl+str(counter)))
+            page_source.append(requests.get(finalurl+str(counter).text))
             counter += 1
         
     elif int(total_pages) >= 500:
         
         for i in range(500):
             
-            page_source.append(requests.get(finalurl+str(counter)))
+            page_source.append(requests.get(finalurl+str(counter).text))
             counter += 1
             
     titles = []
