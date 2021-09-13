@@ -61,12 +61,13 @@ def get_reviews(link: str):
     while len(page_source) < (math.floor(int(total)/10)+.1):   
         
         try:
-            time.sleep(.25)
+            time.sleep(1)
             page_source.append(driver.page_source)
             driver.find_element_by_class_name('a-last').click()
             
         except WebDriverException:
-            continue
+            driver.close()
+            break
         
         if len(page_source) >= (math.floor(int(total)/10)+.1):
             driver.close()
@@ -76,8 +77,6 @@ def get_reviews(link: str):
     bodies = []
     
     for i in range(len(page_source)):
-        
-        while len(titles) & len(bodies) < int(total):
         
             world_selection = BeautifulSoup(page_source[i], 'lxml')
     
@@ -96,17 +95,11 @@ def get_reviews(link: str):
             body_reviews = [i for i in body_list if i !=', ']
             bodies.extend(body_reviews)
             
-            filter_object = filter(lambda x: x != "", titles)
-            titles = list(filter_object)
+    filter_object = filter(lambda x: x != "", titles)
+    titles = list(filter_object)
     
-            filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
-            bodies = list(filter_object2)
-            
-            if len(titles) & len(bodies) == int(total):
-                
-                break
-            
-        break
+    filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
+    bodies = list(filter_object2)
             
     reviewdict = {'Title' : titles, 'Body' : bodies}
                    
