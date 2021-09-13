@@ -18,6 +18,7 @@ import selectorlib
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver import FirefoxOptions
+from selenium.common.exceptions import WebDriverException
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
@@ -57,12 +58,14 @@ def get_reviews(link: str):
     
     print(total, 'Reviews found.')
     
-    while len(page_source) < (math.floor(int(total)/10)+.1):    
+    while len(page_source) < (math.floor(int(total)/10)+.1):   
+        
         try:
             time.sleep(.25)
             page_source.append(driver.page_source)
             driver.find_element_by_class_name('a-last').click()
-        except:    
+            
+        except WebDriverException:
             continue
         
         if len(page_source) >= (math.floor(int(total)/10)+.1):
