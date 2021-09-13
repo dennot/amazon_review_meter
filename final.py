@@ -167,9 +167,10 @@ def word_cloud(dftext, stopwords_add):
     wordcloud = WordCloud(stopwords=stopwords, background_color='white').generate(text)
 
 
-    fig = plt.imshow(wordcloud, interpolation='bilinear')
+    plt.imshow(wordcloud, interpolation='bilinear')
+    plt.figure(figsize=[20,10])
     plt.axis('off')
-    st.pyplot(fig)
+    st.pyplot()
 
 st.title('Amazon Review Meter')
 
