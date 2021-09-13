@@ -161,11 +161,14 @@ def word_cloud(dftext, stopwords_add):
 
 
     plt.imshow(wordcloud, interpolation='bilinear')
-    plt.figure(figsize=[20,10])
     plt.axis('off')
     st.pyplot()
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title('Amazon Review Meter')
+
+st.write('Made by Agustín Sánchez')
+st.write('This is a ')
 
 user_input = st.text_input("Insert AMAZON.US product link:")
 
