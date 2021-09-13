@@ -17,6 +17,7 @@ import selectorlib
 
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from selenium.webdriver import FirefoxOptions
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
@@ -34,9 +35,12 @@ import math
 
 def get_reviews(link: str):
     
+    opts = FirefoxOptions()
+    opts.add_argument("--headless")
+    
     binary = FirefoxBinary('/app/vendor/firefox/firefox')
     
-    driver = webdriver.Firefox(firefox_binary=binary, executable_path=r'/app/vendor/geckodriver/geckodriver')
+    driver = webdriver.Firefox(firefox_binary=binary, executable_path=r'/app/vendor/geckodriver/geckodriver', firefox_options=opts)
     driver.get(link)
     
     time.sleep(1)
