@@ -172,16 +172,18 @@ if len(user_input) != 0:
     df = get_reviews(user_input)
 
     if show_side == 'Review Analysis':
-    
+        
         stopwords_add = stopwords(user_input)
         result, size, pos, nega = sentiment_scores(df['Body'])
+        st.write('We found', pos, 'positive reviews and', nega, 'negative reviews.')
         score = (int(pos)/int(size))*100
         img = math.floor(score/20)
         st.image('tacometro_'+str(img)+'.png')
         word_cloud(df.Body, stopwords_add)
     
     if show_side == 'Reviews':
-    
+        
+        st.write('This is a dataframe of all the reviews extracted from your link.')
         st.write(df)
         
     caching.clear_cache()
