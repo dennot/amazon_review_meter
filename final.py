@@ -171,8 +171,9 @@ def word_cloud(dftext, stopwords_add):
     
     text = " ".join(review for review in dftext)
     stopwords = set(STOPWORDS)
+    stopwords_add.append('br')
     stopwords.update(stopwords_add)
-
+    
     wordcloud = WordCloud(stopwords=stopwords, background_color='white').generate(text)
 
 
