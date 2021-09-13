@@ -74,6 +74,10 @@ def get_reviews(link: str):
             
             st.text('maybe break here')
             
+            if len(page_source) >= (math.floor(int(total)/10)+.1):
+                driver.close()
+                break
+            
         except WebDriverException:
             driver.close()
             break
@@ -82,10 +86,6 @@ def get_reviews(link: str):
             driver.close()
             break
         
-        if len(page_source) >= (math.floor(int(total)/10)+.1):
-            driver.close()
-            break
-    
     titles = []
     bodies = []
     
