@@ -165,12 +165,13 @@ def word_cloud(dftext, stopwords_add):
     st.pyplot()
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-st.title('Amazon Review Meter')
+st.title('Amazon Review Analysis')
 
 st.write('Made by Agustín Sánchez')
-st.write('This is a ')
+st.write("This is a Python app that extracts text reviews from Amazon.com to analyze and create a meter that shows the overall sentiment (positive or negative) of the product's reviews.")
+st.write('To use it simply insert an Amazon.com product link in the bar below')
 
-user_input = st.text_input("Insert AMAZON.US product link:")
+user_input = st.text_input("Insert product link:")
 
 if len(user_input) != 0:
     show_side = st.sidebar.selectbox('Show',('Review Analysis', 'Reviews'))
