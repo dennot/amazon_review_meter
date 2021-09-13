@@ -47,6 +47,7 @@ def get_reviews(link: str):
     
     time.sleep(1)
     driver.find_element_by_xpath("//a[@data-hook='see-all-reviews-link-foot']").click()
+    time.sleep(1)
     page_source = []
     
     source_1 = driver.page_source
@@ -58,21 +59,28 @@ def get_reviews(link: str):
     
     print(total, 'Reviews found.')
     
-    while len(page_source) < (math.floor(int(total)/10)+.1):   
-        
-        try:
-            time.sleep(1)
-            page_source.append(driver.page_source)
-            driver.find_element_by_class_name('a-last').click()
-            
-        except WebDriverException:
-            driver.close()
-            break
-        
-        if len(page_source) >= (math.floor(int(total)/10)+.1):
-            driver.close()
-            break
+    urlreview = driver.current_url
+    driver.close()
+    url_add = 'ref=cm_cr_arp_d_paging_btm_next_2?ie=UTF8&reviewerType=all_reviews&pageNumber='
+    finalurl = urlreview.replace('ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews', url_add)
     
+    total_pages = math.ceil(int(total)/10)
+    counter = 1
+    
+    if int(total) < 500:
+        
+        for i in range(len(total_pages)):
+            
+            page_source.append(requests.get(finalurl+counter))
+            counter += 1
+        
+    elif int(total_pages) >= 500:
+        
+        for i in range(500):
+            
+            page_source.append(requests.get(finalurl+counter))
+            counter += 1
+            
     titles = []
     bodies = []
     
@@ -174,7 +182,7 @@ st.write('To use it simply insert an Amazon.com product link in the bar below')
 user_input = st.text_input("Insert product link:")
 
 if len(user_input) != 0:
-    show_side = st.sidebar.selectbox('Show',('Review Analysis', 'Reviews'))
+    show_side = st.sidebar.selectbox('Show',('Review Analysis', 'Reviews Database'))
     df = get_reviews(user_input)
 
     if show_side == 'Review Analysis':
@@ -184,6 +192,7 @@ if len(user_input) != 0:
         st.write('We found', pos, 'positive reviews and', nega, 'negative reviews.')
         score = (int(pos)/int(size))*100
         img = math.floor(score/20)
+        st.write('These are the most common words found within the reviews.')
         st.image('tacometro_'+str(img)+'.png')
         word_cloud(df.Body, stopwords_add)
     
