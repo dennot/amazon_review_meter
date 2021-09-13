@@ -144,7 +144,7 @@ def sentiment_scores(df):
 
 def stopwords(link: str):
     
-    title = re.findall(r'.com/([aA-zZ-]*)/', link)
+    title = re.findall(r'.com/([aA0-zZ9-]*)/', link)
     
     stopwords = title[0].split('-')
     
@@ -164,6 +164,8 @@ def word_cloud(dftext, stopwords_add):
     st.pyplot()
 
 st.title('Amazon Review Meter')
+
+st.sidebar.selectbox('Show',('Review Analysis', 'Reviews'))
 
 user_input = st.text_input("Insert AMAZON.US product link:")
 
