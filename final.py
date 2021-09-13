@@ -16,6 +16,7 @@ from bs4 import BeautifulSoup
 import selectorlib
 
 from selenium import webdriver
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
@@ -33,7 +34,9 @@ import math
 
 def get_reviews(link: str):
     
-    driver = webdriver.Firefox(executable_path=r'Selenium::WebDriver::Firefox::Binary.path = "/app/vendor/firefox/firefox"')
+    binary = FirefoxBinary('/app/vendor/firefox/firefox')
+    
+    driver = webdriver.Firefox(firefox_binary=binary, executable_path=r'/app/vendor/geckodriver/geckodriver')
     driver.get(link)
     
     time.sleep(1)
