@@ -33,7 +33,7 @@ import math
 
 def get_reviews(link: str):
     
-    driver = webdriver.Firefox('C:\Program Files\geckodriver-v0.29.1-win64\geckodriver.exe')
+    driver = webdriver.Firefox(executable_path=r'C:\Program Files\geckodriver-v0.29.1-win64\geckodriver.exe')
     driver.get(link)
     
     time.sleep(1)
@@ -63,7 +63,6 @@ def get_reviews(link: str):
     
     titles = []
     bodies = []
-    stars = []
     
     for i in range(len(page_source)):
         

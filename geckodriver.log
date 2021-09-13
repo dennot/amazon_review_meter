@@ -2002,3 +2002,78 @@ JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILU
 
 ###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
+1631499465058	geckodriver	INFO	Listening on 127.0.0.1:49352
+1631499468081	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofile3ATeCN"
+1631499468287	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofile3ATeCN\\search.json.mozlz4", (void 0)))
+1631499469885	Marionette	INFO	Listening on port 49360
+1631499470113	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/dp/B084GSMNRD/ref=sr_1_1?dchild=1&keywords=iphone+11&qid=1630525845&sr=8-1 line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/product-reviews/B084GSMNRD/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1631499476148	Marionette	INFO	Stopped listening on port 49360
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1631499488836	geckodriver	INFO	Listening on 127.0.0.1:49519
+1631499491864	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofileKg1dB1"
+1631499492074	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofileKg1dB1\\search.json.mozlz4", (void 0)))
+1631499493893	Marionette	INFO	Listening on port 49528
+1631499493905	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/dp/B084GSMNRD/ref=sr_1_1?dchild=1&keywords=iphone+11&qid=1630525845&sr=8-1 line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/product-reviews/B084GSMNRD/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1631499499640	Marionette	INFO	Stopped listening on port 49528
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1631499528517	geckodriver	INFO	Listening on 127.0.0.1:49706
+1631499531532	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofiletpQa7u"
+1631499531737	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofiletpQa7u\\search.json.mozlz4", (void 0)))
+1631499533532	Marionette	INFO	Listening on port 49715
+1631499533570	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/dp/B084GSMNRD/ref=sr_1_1?dchild=1&keywords=iphone+11&qid=1630525845&sr=8-1 line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/product-reviews/B084GSMNRD/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1631499539057	Marionette	INFO	Stopped listening on port 49715
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1631499546581	geckodriver	INFO	Listening on 127.0.0.1:49887
+1631499549609	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofile33QZVe"
+1631499549814	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofile33QZVe\\search.json.mozlz4", (void 0)))
+1631499551636	Marionette	INFO	Listening on port 49895
+1631499551751	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/dp/B084GSMNRD/ref=sr_1_1?dchild=1&keywords=iphone+11&qid=1630525845&sr=8-1 line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/product-reviews/B084GSMNRD/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1631499557548	Marionette	INFO	Stopped listening on port 49895
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1631499579556	geckodriver	INFO	Listening on 127.0.0.1:50067
+1631499582584	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofiledP53Wc"
+1631499582796	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofiledP53Wc\\search.json.mozlz4", (void 0)))
+1631499584606	Marionette	INFO	Listening on port 50075
+1631499584622	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/dp/B084GSMNRD/ref=sr_1_1?dchild=1&keywords=iphone+11&qid=1630525845&sr=8-1 line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/product-reviews/B084GSMNRD/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1631499591398	Marionette	INFO	Stopped listening on port 50075
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+1631499770532	geckodriver	INFO	Listening on 127.0.0.1:63229
+1631499773557	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofileRlJrgy"
+1631499773767	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\agsan\\AppData\\Local\\Temp\\rust_mozprofileRlJrgy\\search.json.mozlz4", (void 0)))
+1631499775598	Marionette	INFO	Listening on port 63237
+1631499775717	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/dp/B084GSMNRD/ref=sr_1_1?dchild=1&keywords=iphone+11&qid=1630525845&sr=8-1 line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://www.amazon.com/Apple-Carrier-Subscription-Cricket-Wireless/product-reviews/B084GSMNRD/ref=cm_cr_othr_d_show_all_btm?ie=UTF8&reviewerType=all_reviews line 7 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1631499781436	Marionette	INFO	Stopped listening on port 63237
+JavaScript error: resource:///modules/Interactions.jsm, line 230: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIUserIdleService.removeIdleObserver]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
