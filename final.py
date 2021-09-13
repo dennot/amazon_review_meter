@@ -19,6 +19,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver import FirefoxOptions
 from selenium.common.exceptions import WebDriverException
+from selenium.common.exceptions import SessionNotCreatedException
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
@@ -73,6 +74,10 @@ def get_reviews(link: str):
             
             st.text('maybe break here')
             
+        except WebDriverException:
+            driver.close()
+            break
+        
         except WebDriverException:
             driver.close()
             break
