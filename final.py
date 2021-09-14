@@ -180,7 +180,8 @@ st.title('Amazon Review Analysis')
 
 st.write('Made by Agustín Sánchez')
 st.write("This is a Python app that extracts text reviews from Amazon.com to analyze and create a meter that shows the overall sentiment (positive or negative) of the product's reviews.")
-st.write('To use it simply insert an Amazon.com product link in the bar below')
+st.write('To use it simply insert an Amazon.com (ONLY WORKS WITH LINKS FROM AMAZON US) product link in the bar below')
+st.caption('Disclaimer: Due to Streamlit & Heroku limitations you might encounter that the app only extracted a fraction of the reviews.')
 
 user_input = st.text_input("Insert product link:")
 
