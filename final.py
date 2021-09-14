@@ -218,7 +218,7 @@ if len(user_input) != 0:
         st.subheader('These are the most common words found within the reviews.')
         word_cloud(df.Body, stopwords_add)
     
-    if show_side == 'Reviews':
+    if show_side == 'Reviews Database':
         
         st.write('This is a dataframe of all the reviews extracted from your link.')
         st.write(df)
