@@ -78,6 +78,9 @@ def get_reviews(link: str):
                 driver.close()
                 break
             
+            else:
+                continue
+            
         except WebDriverException:
             driver.close()
             break
@@ -201,8 +204,8 @@ if len(user_input) != 0:
         st.write('We found', pos, 'positive reviews and', nega, 'negative reviews.')
         score = (int(pos)/int(size))*100
         img = math.floor(score/20)
-        st.write('These are the most common words found within the reviews.')
         st.image('tacometro_'+str(img)+'.png')
+        st.write('These are the most common words found within the reviews.')
         word_cloud(df.Body, stopwords_add)
     
     if show_side == 'Reviews':
