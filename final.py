@@ -77,6 +77,7 @@ def get_reviews(link: str):
             
             if len(page_source) >= (math.floor(int(total)/10)+.1):
                 driver.close()
+                st.write('Driver closed here')
                 break
             
             else:
