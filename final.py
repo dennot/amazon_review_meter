@@ -73,12 +73,17 @@ def get_reviews(link: str):
                 break
             
         except WebDriverException:
-            driver.close()
+            print('driver crashed')
+            
+        except SessionNotCreatedException:
+            print('driver crashed')
+            
+        finally:
+            driver.quit()
             break
         
-        except SessionNotCreatedException:
-            driver.close()
-            break
+        break
+            
         
     titles = []
     bodies = []
