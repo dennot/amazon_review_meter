@@ -73,6 +73,7 @@ def get_reviews(link: str):
             driver.find_element_by_class_name('a-last').click()
             
             st.text('maybe break here')
+            st.write(len(page_source))
             
             if len(page_source) >= (math.floor(int(total)/10)+.1):
                 driver.close()
