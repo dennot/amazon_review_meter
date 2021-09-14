@@ -46,7 +46,7 @@ def get_reviews(link: str):
     driver = webdriver.Firefox(firefox_binary=binary, executable_path=r'/app/vendor/geckodriver/geckodriver', firefox_options=opts)
     
     new_link = link.replace('dp', 'product-reviews')
-    re_link = re.findall(r'([aA0.-zZ9-]*)ref', new_link)
+    re_link = re.findall(r'(.*)ref', new_link)
     final_link = re_link[0]+'ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews'
     
     driver.get(final_link)
