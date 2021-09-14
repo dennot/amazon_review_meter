@@ -66,8 +66,6 @@ def get_reviews(link: str):
             page_source.append(driver.page_source)
             driver.find_element_by_class_name('a-last').click()
             
-            st.write(len(page_source))
-            
             if len(page_source) >= (math.floor(int(total)/10)+.1):
                 driver.close()
                 break
@@ -196,7 +194,7 @@ if len(user_input) != 0:
         score = (int(pos)/int(size))*100
         img = math.floor(score/20)
         st.image('tacometro_'+str(img)+'.png')
-        st.write('These are the most common words found within the reviews.')
+        st.subheader('These are the most common words found within the reviews.')
         word_cloud(df.Body, stopwords_add)
     
     if show_side == 'Reviews':
