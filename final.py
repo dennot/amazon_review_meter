@@ -76,17 +76,14 @@ def get_reviews(link: str):
             
         except WebDriverException:
             driver.quit()
-            driver.close()
             break
             
         except SessionNotCreatedException:
             driver.quit()
-            driver.close()
             break
         
         if len(page_source) >= (math.floor(int(total)/10)+.1):
             driver.quit()
-            driver.close()
             break
             
         
