@@ -69,6 +69,7 @@ def get_reviews(link: str):
             driver.find_element_by_class_name('a-last').click()
             
         except WebDriverException:
+            driver.quit()
             break
             
         except SessionNotCreatedException:
@@ -76,7 +77,7 @@ def get_reviews(link: str):
             break
         
         if len(page_source) >= (math.floor(int(total)/10)+.1):
-            driver.close()
+            driver.quit()
             break
             
         
@@ -168,7 +169,7 @@ def sentiment_scores(df):
 
 def stopwords(link: str):
     
-    title = re.findall(r'.com/([aA0-zZ9-]*)/', link)
+    title = re.findall(r'.com/(.*)/', link)
     
     stopwords = title[0].split('-')
     
