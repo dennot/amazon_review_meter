@@ -85,10 +85,12 @@ def get_reviews(link: str):
             
         except WebDriverException:
             driver.close()
+            st.write('web')
             break
         
         except SessionNotCreatedException:
             driver.close()
+            st.write('session')
             break
         
     titles = []
