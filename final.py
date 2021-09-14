@@ -62,7 +62,7 @@ def get_reviews(link: str):
     total_reviews = re.findall(r'\| ([0-9]*)', str(total_selection))
     total = total_reviews[0]
     
-    print(total, 'Reviews found.')
+    st.write(total, 'Reviews found.')
     
     
     while len(page_source) < (math.floor(int(total)/10)+.1):   
