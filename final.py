@@ -72,9 +72,6 @@ def get_reviews(link: str):
                 driver.close()
                 break
             
-            else:
-                continue
-            
         except WebDriverException:
             driver.close()
             break
@@ -110,8 +107,24 @@ def get_reviews(link: str):
     
     filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
     bodies = list(filter_object2)
-            
-    reviewdict = {'Title' : titles, 'Body' : bodies}
+    
+    if len(bodies) == len(titles):
+        
+        reviewdict = {'Title' : titles, 'Body' : bodies}
+        
+    elif len(bodies) < len(titles):
+        
+        null_n = len(titles) - len(bodies)
+        nulls = ['null' for i in range(null_n)]
+        bodies.extend(nulls)
+        reviewdict = {'Title' : titles, 'Body' : bodies}
+        
+    elif len(bodies) > len(titles):
+        
+        null_n = len(bodies) - len(titles)
+        nulls = ['null' for i in range(null_n)]
+        titles.extend(nulls)
+        reviewdict = {'Title' : titles, 'Body' : bodies}
                    
     df = pd.DataFrame(data=reviewdict)
     
