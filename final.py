@@ -48,22 +48,16 @@ def get_reviews(link: str):
     new_link = link.replace('dp', 'product-reviews')
     final_link = new_link.replace('ref=lp_16225009011_1_2?dchild=1&th=1', 'ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews')
     driver.get(final_link)
-    
-    st.text('didnt break1')
 
     page_source = []
     
     source_1 = driver.page_source
     
-    st.text('didnt break2')
     
     world_selection = BeautifulSoup(source_1, 'lxml')
     total_selection = world_selection.find('div', class_='a-row a-spacing-base a-size-base')
     total_reviews = re.findall(r'\| ([0-9]*)', str(total_selection))
-    total = total_reviews[0]
-    
-    st.write(total, 'Reviews found.')
-    
+    total = total_reviews[0]   
     
     while len(page_source) < (math.floor(int(total)/10)+.1):   
         
@@ -72,12 +66,10 @@ def get_reviews(link: str):
             page_source.append(driver.page_source)
             driver.find_element_by_class_name('a-last').click()
             
-            st.text('maybe break here')
             st.write(len(page_source))
             
             if len(page_source) >= (math.floor(int(total)/10)+.1):
                 driver.close()
-                st.write('Driver closed here')
                 break
             
             else:
@@ -85,12 +77,10 @@ def get_reviews(link: str):
             
         except WebDriverException:
             driver.close()
-            st.write('web')
             break
         
         except SessionNotCreatedException:
             driver.close()
-            st.write('session')
             break
         
     titles = []
@@ -120,9 +110,6 @@ def get_reviews(link: str):
     
     filter_object2 = filter(lambda x: x != "Your browser does not support HTML5 video.", bodies)
     bodies = list(filter_object2)
-    
-    st.write(len(bodies), len(titles))
-    st.write(titles, bodies)
             
     reviewdict = {'Title' : titles, 'Body' : bodies}
                    
