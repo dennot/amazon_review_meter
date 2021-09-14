@@ -67,10 +67,8 @@ def get_reviews(link: str):
             time.sleep(1)
             page_source.append(driver.page_source)
             driver.find_element_by_class_name('a-last').click()
-            st.write(len(page_source), (math.floor(int(total)/10)+.1))
             
         except WebDriverException:
-            st.write('WEB EXCEPTION')
             break
             
         except SessionNotCreatedException:
